@@ -58,9 +58,10 @@ const weather = () => {
         }
     }
 
-    useEffect(()=>{
-        search();
-    },[])
+    // useEffect(()=>{
+    //     search();
+    // },[])
+    const celsius =Math.floor(((weatherData.temperature - 32)*5)/9);
 
   return (
     <div className='weather'>
@@ -72,7 +73,7 @@ const weather = () => {
     {weatherData?
     <>
         <img src={weatherData.icon} className='weather-icon'></img>
-    <p className='temperature'>{weatherData.temperature}°c</p>
+    <p className='temperature'>{celsius}°c</p>
     <p className='location'>{weatherData.location}</p>
     <div className="weather_data">
         <div className="col">
